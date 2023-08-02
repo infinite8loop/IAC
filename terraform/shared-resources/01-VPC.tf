@@ -3,14 +3,24 @@
 #############################################################
 
 module "vpc" {
-  source = "cloudposse/vpc/aws"
+  source = "terraform-aws-modules/vpc/aws"
 
-  version = "2.0.0"
-#   stage   = var.stage
-  name    = "Ez-ai-vpc"
-  environment = var.environment
-  ipv4_primary_cidr_block = var.vpc_cidr
+  name = "Ez-vpc"
+  cidr = var.vpc_cidr
 
-  assign_generated_ipv6_cidr_block = false
+  azs             = var.availability_zones
+  private_subnets = var.private_subnets
+  public_subnets  = var.public_subnets
 
+  enable_nat_gateway = true
+  enable_vpn_gateway = false
+  single_nat_gateway = true
+  enable_dns_hostnames = true
+  enable_dns_support   = true  
+
+  tags = {
+    Terraform = "true"
+    Environment = var.environment
+  }
 }
+

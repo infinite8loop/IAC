@@ -9,14 +9,14 @@ terraform {
     organization = "Ez-ai"
 
     workspaces {
-      name = "dummy"
+      name = "shared-resources"
     }
   }
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.57.0"
+      version = "~> 5.0"
     }
   }
   required_version = ">= 1.2.3"
