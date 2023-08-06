@@ -6,7 +6,7 @@ locals {
 
   azs      = var.availability_zones
 
-  container_name = "new-intake-s3"
+  container_name = "container-name"
   container_port = 80
 
   tags = {

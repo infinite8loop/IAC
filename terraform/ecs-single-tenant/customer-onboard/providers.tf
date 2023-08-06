@@ -6,10 +6,10 @@ provider "aws" {
 
 terraform {
   cloud {
-    organization = "Ez-ai"
+    organization = "t-cloud-organization-name"
 
     workspaces {
-      name = "customer-1"
+      name = "t-cloud-workspace-name"
     }
   }
 
@@ -32,7 +32,7 @@ terraform {
 
 terraform {
   backend "remote" {
-    organization = "Ez-ai"
+    organization = "t-cloud-organization-name"
 
     workspaces {
       prefix = "onboarding-customer-"  #onboarding-customer-<CUSTOMER_NAME>
